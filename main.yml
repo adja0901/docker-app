@@ -1,0 +1,19 @@
+name: Mon_Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Utilisation d'une image Docker
+        uses: docker://ubuntu:latest  # Remplacez ici par l'image Docker que vous souhaitez utiliser
+        with:
+          args: echo "Exécution de quelque chose dans le conteneur Docker"
